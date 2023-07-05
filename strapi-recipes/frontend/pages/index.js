@@ -1,8 +1,9 @@
 import Head from "next/head";
 import Image from "next/image";
 import { Inter } from "next/font/google";
-import styles from "@/styles/Home.module.css";
-import Recipe from "../components/recipe";
+import Recipe from "../components/Recipe/Recipe";
+import styled from "styled-components";
+import styles from "../styles/Home.module.css";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -12,7 +13,7 @@ export default function Home({ recipes }) {
       <Head>
         <title>Strapi Recipe Book</title>
       </Head>
-      <div id="recipe-container">
+      <div className={styles.container}>
         {recipes.data.map((recipe) => (
           <Recipe recipe={recipe} key={recipe.id} />
         ))}
